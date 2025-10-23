@@ -360,24 +360,6 @@
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            min-width: 44px;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .mobile-menu-btn:hover {
-            background: rgba(233, 30, 99, 0.1);
-            color: var(--primary);
-        }
-        
-        .mobile-menu-btn:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
         }
         
         /* Hero Section */
@@ -414,7 +396,6 @@
             margin-bottom: 1rem;
             background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -1038,21 +1019,33 @@
             background: var(--primary-dark);
         }
         
-        /* Responsive Design */
-        
-        /* Large Tablets and Small Desktops */
-        @media (max-width: 1200px) {
-            .nav-container {
-                padding: 0.8rem 1.5rem;
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
             }
             
-            .hero-container {
-                padding: 0 1.5rem;
-                gap: 2rem;
+            .hero .subtitle {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+                text-align: center;
             }
             
             .hero-content {
-                padding: 2.5rem;
+                padding: 2rem;
             }
             
             .hero h1 {
@@ -1060,661 +1053,61 @@
             }
             
             .hero .subtitle {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* Care Overview Mobile Styles */
             .care-grid {
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .care-card {
+                padding: 2rem;
+            }
+
+            .user-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .user-quick-nav {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
             }
         }
         
-        /* Tablets */
-        @media (max-width: 992px) {
+        @media (max-width: 576px) {
             .nav-container {
-                padding: 0.8rem 1.2rem;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
+                padding: 0 1.5rem;
             }
             
             .hero-content {
-                padding: 2rem;
-                order: 1;
-            }
-            
-            .hero-images {
-                order: 2;
-                height: 400px;
-                padding: 1rem;
-            }
-            
-            .hero-image {
-                width: 200px;
-                height: 160px;
+                padding: 1.5rem;
             }
             
             .hero h1 {
                 font-size: 2.2rem;
             }
             
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .care-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-        
-        /* Mobile Landscape and Small Tablets */
-        @media (max-width: 768px) {
-            /* Header Mobile Styles */
-            .nav-container {
-                padding: 0.8rem 1rem;
-                height: 60px;
-            }
-            
-            .logo {
-                font-size: 1.4rem;
-            }
-            
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.5rem;
-            }
-            
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
+            .hero-buttons {
                 flex-direction: column;
-                padding: 2rem 1rem;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                z-index: 999;
-            }
-            
-            .nav-menu.active {
-                display: flex;
-            }
-            
-            .nav-link {
-                padding: 1rem;
-                margin: 0.5rem 0;
-                border-radius: 10px;
-                text-align: center;
-                font-size: 1.1rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: var(--dark);
-                cursor: pointer;
-                padding: 0.5rem;
-            }
-            
-            .nav-actions {
-                gap: 0.8rem;
-            }
-            
-            .btn-login, .btn-signup {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-            
-            /* User Navigation Mobile */
-            .user-nav {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-end;
-            }
-            
-            .user-info {
-                align-items: center;
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-            }
-            
-            .user-quick-nav {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .btn-quick-nav {
-                font-size: 0.8rem;
-                padding: 0.4rem 0.6rem;
-            }
-            
-            /* Hero Section Mobile */
-            .hero {
-                padding: 100px 0 60px;
-                min-height: 70vh;
-            }
-            
-            .hero-container {
-                padding: 0 1rem;
-                gap: 1.5rem;
-            }
-            
-            .hero-content {
-                padding: 1.5rem;
-                border-radius: 15px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-                line-height: 1.3;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .hero-images {
-                height: 300px;
-                padding: 0.5rem;
-            }
-            
-            .image-row {
-                gap: 1rem;
-            }
-            
-            .hero-image {
-                width: 140px;
-                height: 120px;
-                border-radius: 15px;
-                border: 4px solid rgba(255, 255, 255, 0.8);
-            }
-            
-            /* Care Overview Mobile */
-            .care-overview {
-                padding: 60px 0;
-            }
-            
-            .care-container {
-                padding: 0 1rem;
-            }
-            
-            .care-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-top: 2rem;
-            }
-            
-            .care-card {
-                padding: 1.5rem;
-                border-radius: 15px;
-            }
-            
-            .care-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .care-header h3 {
-                font-size: 1.5rem;
-            }
-            
-            .care-header p {
-                font-size: 1rem;
-            }
-            
-            .care-feature {
-                padding: 0.6rem;
-                font-size: 0.9rem;
-            }
-            
-            .btn-care-access {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            /* Features Mobile */
-            .features {
-                padding: 80px 0;
-            }
-            
-            .features-container {
-                padding: 0 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-                margin-bottom: 3rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
             
             .feature-card {
-                padding: 1.5rem;
-                border-radius: 15px;
-            }
-            
-            .feature-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .feature-card h3 {
-                font-size: 1.3rem;
-            }
-            
-            .feature-card p {
-                font-size: 0.9rem;
-            }
-            
-            /* Testimonials Mobile */
-            .testimonials {
-                padding: 80px 0;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .testimonial-card {
-                padding: 1.5rem;
-                border-radius: 15px;
-            }
-            
-            .testimonial-text {
-                font-size: 0.9rem;
-            }
-            
-            .author-avatar {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            
-            /* Footer Mobile */
-            .footer {
-                padding: 3rem 0 1.5rem;
-            }
-            
-            .footer-container {
-                padding: 0 1rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-            
-            .footer-section {
-                text-align: center;
-            }
-            
-            .footer-section h4 {
-                font-size: 1.1rem;
-            }
-            
-            .social-links {
-                justify-content: center;
-                margin-top: 1rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            
-            .newsletter-input {
-                padding: 0.8rem 1rem;
-            }
-            
-            .newsletter-btn {
-                padding: 0.8rem 1.5rem;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-        
-        /* Small Mobile Devices */
-        @media (max-width: 576px) {
-            .nav-container {
-                padding: 0.6rem 0.8rem;
-                height: 55px;
-            }
-            
-            .logo {
-                font-size: 1.2rem;
-            }
-            
-            .logo-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 1.2rem;
-            }
-            
-            .nav-menu {
-                top: 55px;
-                padding: 1.5rem 0.8rem;
-            }
-            
-            .nav-link {
-                padding: 0.8rem;
-                font-size: 1rem;
-            }
-            
-            .btn-login, .btn-signup {
-                font-size: 0.8rem;
-                padding: 0.4rem 0.8rem;
-            }
-            
-            /* Hero Section Small Mobile */
-            .hero {
-                padding: 80px 0 40px;
-                min-height: 60vh;
-            }
-            
-            .hero-container {
-                padding: 0 0.8rem;
-            }
-            
-            .hero-content {
-                padding: 1.2rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .hero-images {
-                height: 250px;
-            }
-            
-            .hero-image {
-                width: 120px;
-                height: 100px;
-            }
-            
-            /* Care Cards Small Mobile */
-            .care-card {
-                padding: 1.2rem;
-            }
-            
-            .care-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .care-header h3 {
-                font-size: 1.3rem;
-            }
-            
-            .care-feature {
-                padding: 0.5rem;
-                font-size: 0.85rem;
-            }
-            
-            .btn-care-access {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            
-            /* Features Small Mobile */
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .section-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .feature-card {
-                padding: 1.2rem;
-            }
-            
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .feature-card h3 {
-                font-size: 1.2rem;
-            }
-            
-            .feature-card p {
-                font-size: 0.85rem;
-            }
-            
-            /* Testimonials Small Mobile */
-            .testimonial-card {
-                padding: 1.2rem;
-            }
-            
-            .testimonial-text {
-                font-size: 0.85rem;
-            }
-            
-            /* Footer Small Mobile */
-            .footer {
-                padding: 2rem 0 1rem;
-            }
-            
-            .footer-container {
-                padding: 0 0.8rem;
-            }
-            
-            .footer-content {
-                gap: 1.5rem;
-            }
-            
-            .footer-section h4 {
-                font-size: 1rem;
-            }
-            
-            .footer-section ul li {
-                margin-bottom: 0.6rem;
-            }
-            
-            .footer-section ul li a {
-                font-size: 0.85rem;
-            }
-            
-            .newsletter {
-                padding: 1rem;
-            }
-            
-            .newsletter h5 {
-                font-size: 0.9rem;
-            }
-            
-            .newsletter-input {
-                padding: 0.7rem 0.8rem;
-                font-size: 0.9rem;
-            }
-            
-            .newsletter-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            
-            .footer-bottom {
-                font-size: 0.8rem;
-            }
-        }
-        
-        /* Extra Small Mobile Devices */
-        @media (max-width: 400px) {
-            .nav-container {
-                padding: 0.5rem 0.6rem;
-            }
-            
-            .logo {
-                font-size: 1rem;
-            }
-            
-            .logo-icon {
-                width: 30px;
-                height: 30px;
-                font-size: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .hero-image {
-                width: 100px;
-                height: 80px;
-            }
-            
-            .care-card, .feature-card, .testimonial-card {
-                padding: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .btn-care-access, .btn-quick-nav {
-                font-size: 0.8rem;
-                padding: 0.6rem 1rem;
-            }
-        }
-        
-        /* Mobile Touch Improvements */
-        @media (max-width: 768px) {
-            /* Improve touch targets */
-            .btn-login, .btn-signup, .btn-care-access, .btn-quick-nav, .btn-logout {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            /* Better touch scrolling */
-            .hero, .care-overview, .features, .testimonials, .footer {
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            /* Prevent zoom on input focus */
-            input[type="email"], input[type="password"], input[type="text"] {
-                font-size: 16px;
-            }
-            
-            /* Improve form usability */
-            .form-group input {
-                min-height: 44px;
-                font-size: 16px;
-            }
-            
-            .btn-login-submit {
-                min-height: 48px;
-                font-size: 16px;
-            }
-            
-            /* Better spacing for mobile */
-            .nav-link {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            /* Improve image loading on mobile - lazy loading is handled via HTML attributes */
-            
-            /* Better mobile navigation */
-            .nav-menu.active {
-                animation: slideDown 0.3s ease;
-            }
-            
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        }
-        
-        /* Landscape Mobile Optimization */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .hero {
-                min-height: 60vh;
-                padding: 80px 0 40px;
-            }
-            
-            .hero-images {
-                height: 200px;
-            }
-            
-            .hero-image {
-                width: 120px;
-                height: 100px;
-            }
-            
-            .nav-menu {
-                max-height: 60vh;
-                overflow-y: auto;
+                padding: 1.8rem;
             }
         }
         
@@ -1871,12 +1264,12 @@
             
             <div class="hero-images">
                 <div class="image-row">
-                    <img src="./img 1.png" alt="Mother and baby" class="hero-image" loading="lazy">
-                    <img src="./img 2.png" alt="Pregnant woman" class="hero-image" loading="lazy">
+                    <img src="./img 1.png" alt="Mother and baby" class="hero-image">
+                    <img src="./img 2.png" alt="Pregnant woman" class="hero-image">
                 </div>
                 <div class="image-row">
-                    <img src="./img 3.png" alt="Baby milestone" class="hero-image" loading="lazy">
-                    <img src="./img 4.png" alt="Baby care" class="hero-image" loading="lazy">
+                    <img src="./img 3.png" alt="Baby milestone" class="hero-image">
+                    <img src="./img 4.png" alt="Baby care" class="hero-image">
                 </div>
             </div>
         </div>
@@ -2214,47 +1607,16 @@
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
         
-        if (mobileMenuBtn && navMenu) {
-            mobileMenuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                navMenu.classList.toggle('active');
-                
-                // Update button icon
-                const icon = mobileMenuBtn.querySelector('i');
-                if (navMenu.classList.contains('active')) {
-                    icon.className = 'fas fa-times';
-                } else {
-                    icon.className = 'fas fa-bars';
-                }
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && window.innerWidth <= 768) {
-                    navMenu.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.className = 'fas fa-bars';
-                }
-            });
-            
-            // Close mobile menu when clicking on nav links
-            navMenu.addEventListener('click', (e) => {
-                if (e.target.classList.contains('nav-link')) {
-                    navMenu.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.className = 'fas fa-bars';
-                }
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    navMenu.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.className = 'fas fa-bars';
-                }
-            });
-        }
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && window.innerWidth <= 768) {
+                navMenu.style.display = 'none';
+            }
+        });
         
         // Animation on scroll
         const observerOptions = {
@@ -2413,7 +1775,7 @@
 
         // Simple navigation function - no authentication checks
         function navigateToPage(event, url) {
-            console.log('🔗 Navigating to: ' + url);
+            console.log(🔗 Navigating to: ${url});
 
             // Prevent any default behavior that might interfere
             if (event) {
@@ -2444,7 +1806,7 @@
 
         // Alternative navigation function with authentication (for later use)
         async function navigateToPageWithAuth(event, url) {
-            console.log('🔗 Navigating with auth to: ' + url);
+            console.log(🔗 Navigating with auth to: ${url});
 
             // Prevent any default behavior that might interfere
             if (event) {
